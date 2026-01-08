@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>The Rock Church</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" href="images/favicon.ico">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    </head>
+
+    <body>
+        <header>
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo" height="100px">
+            </div>
+
+            <button class="menu-toggle" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav>
+                <ul class="nav-list">
+                    <li class="nav-link"><a href="index.html">Home</a></li>
+                    <li class="nav-link"><a href="index.html#about-us">About Us</a></li>
+                    <li class="nav-link"><a href="#contact-us">Contact Us</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="hero-section" >
+                <div id="finance-hero">
+                    <h1>Partner With Us</h1>
+
+                    <p><strong>At The Rock Church, we aim to go forth and make disciples of the nations. Your talent, time, and generosity enables us to take the Gospel further and faster to as many lost souls as we can through mission trips and connecting with other churches.</strong></p>
+                    <p><strong>By partnering with us financially, you'll be helping us reach out to people in and around the church who are in need of food, clothes, and even education.</strong> </p>
+
+                    <p><i>Store your treasures in Heaven, where moths and rust cannot destroy, and thieves do not break in and steal.<br> Wherever your treasure is, there the desires of your heart will be also.<br> Matthew 6:20-21.</i></p>
+                </div>    
+            </div>
+
+            <div class="content" id="finance-content">
+                <h1 id="partner-title"><span>How To Partner With Us</span></h1>
+
+                <div class="window" id="finance-window">
+                    <div class="panel" id="banking">
+                        <div>
+                            <h2>Our Banking Details</h2>
+                            <p><b>Steward Bank (ZWG)</b><br>The Rock Christian Church<br>Account Number: 100 834 9467</p>
+                            <p><b>Ecobank (ZWG)</b><br>The Rock Christian Church<br>Account Number: 573 440 000 6417</p>
+                            <p><b>Standard Bank of South Africa</b><br> The Rock Church<br>Account Number: 000 000 397 3611<br>Branch Code: 1963</p>
+                        </div>
+                    </div>
+
+                    <div class="panel" id="ecocash">
+                        <h2>Our Ecocash <br>(USD and ZWG)</h2>
+                        <p>Andokuhle: +263 77 847 4929</p>
+                        <p>Rob: +263 77 190 6458</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <h3>Our Socials</h3>
+
+                <ul class="footer-list">
+                    <li><a href="https://www.instagram.com/therockchurchbyo/"><i class="fa-brands fa-instagram footer-icon"></i> @therockchurchbyo</a></li>
+                    <li><a href="https://www.facebook.com/TheRockBulawayo"><i class="fa-brands fa-facebook-f footer-icon"></i> @TheRockBulawayo</a></li>
+                    <li><a href="http://www.youtube.com/@rockchurchbulawayo8502"><i class="fa-brands fa-youtube footer-icon"></i> @rockchurchbulawayo8502</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-content" id="contact-us">
+                <h3>Contact Us</h3>
+
+                <ul class="footer-list">
+                    <li><i class="fa-brands fa-whatsapp footer-icon"></i><a href="https://api.whatsapp.com/send/?phone=263784124834&text&type=phone_number&app_absent=0">+263 78 412 4834</a></li>
+                    <li><i class="fa-solid fa-envelope footer-icon"></i>rockchurchbyo@gmail.com</li>
+                    <li><i class="fa-solid fa-phone footer-icon"></i>Administrator: +263 71 261 6182</li>
+                </ul>
+            </div>
+        </footer>
+
+    <script>
+        //for the slideshow
+        const images = [
+            "images/Leaders.png",
+            "images/people1.png",
+            "images/people4.png",
+            "images/people5.png",
+            "images/people7.png"
+        ];
+
+        let index = 0;
+        const imageElement = document.getElementById("mission-image");
+
+        setInterval(() => {
+            imageElement.style.opacity = 0;
+
+            setTimeout(() => {
+                index = (index + 1) % images.length;
+                imageElement.src = images[index];
+                imageElement.style.opacity = 1;
+            }, 300);
+        }, 4000);
+
+        const images2 = [
+            "images/Leaders2.png",
+            "images/people2.png",
+            "images/people3.png",
+            "images/people6.png"
+        ];
+
+        let index2 = 0;
+        const imageElement2 = document.getElementById("vision-image");
+
+        setInterval(() => {
+            imageElement2.style.opacity = 0;
+
+            setTimeout(() => {
+                index2 = (index + 1) % images2.length;
+                imageElement2.src = images2[index2];
+                imageElement2.style.opacity = 1;
+            }, 300);
+        }, 4000);
+        
+        //for the menu toggle
+        const menuToggle = document.querySelector(".menu-toggle");
+        const navList = document.querySelector(".nav-list");
+
+        menuToggle.addEventListener("click", () => {
+            menuToggle.classList.toggle("active");
+            navList.classList.toggle("active");
+        });
+
+    </script>
+    </body>
+</html>

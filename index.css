@@ -1,0 +1,662 @@
+/*CONTAINS STYLING FOR BOTH THE HOME PAGE AND DONATE PAGE*/
+
+* {
+    transition: 
+        background-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}   /*simple transitions for most elements*/
+
+
+body{
+    margin: 0;
+    background-color: #fff;
+    color: darkslategrey;
+    font-family: Helvetica;
+    overflow-x: hidden;
+}
+
+span{
+    background: linear-gradient(to right,#000080,#0000FF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+header{ /*NAV BAR*/
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    position: fixed;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    width: 100%;
+    height: 75px;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+}
+
+.menu-toggle{
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle span{
+    display: block;
+    border-radius: 2px;
+    background: #000080;
+    width: 26px;
+    height: 3px;
+    margin: 4px 0;
+    transform-origin: center;
+    transition: 0.3s ease;
+}
+
+.menu-toggle:hover span {
+    background: #0000FF;
+}
+
+.nav-list{
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    align-items: center;
+
+    flex-wrap: wrap;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-list a{
+    text-decoration: none;
+    color: darkslategray;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: color .3s ease, background .3s ease;
+    position: relative;
+
+}
+
+.nav-list a:hover{
+    color: #0000FF;
+    transform: translateY(-1px);
+}
+
+.nav-list a:active{
+    background: rgba(0,0,255,0.15);
+}
+
+.nav-list a::after{
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(to right,#000080,#0000FF);
+    transition: width .3s ease, left .3s ease;
+}
+
+.nav-list a:hover::after{
+    width: 100%;
+    left: 0;
+}   /*END OF NAV BAR*/
+
+
+main{
+    padding-top: 5.5rem;
+}
+
+.hero-section{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(images/hero.JPG);
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-buttons{
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.hero-buttons a{
+    font-size: 1rem;
+    text-decoration: none;
+    color: white;
+}
+
+.btn{   /*ALL BUTTONS*/
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    background-image: linear-gradient(to right,#000080,#0000FF);
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: transform 0.25s ease, 0.25s ease;
+}
+
+.btn:hover{
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.btn:active{
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transform: translateY(0);
+}
+
+#finance-hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    padding: 2rem;
+    text-align: center;   
+}
+
+#finance-hero h1 {
+    font-size: clamp(1.6rem, 4.5vw, 3rem);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+#finance-hero p {
+    font-size: clamp(0.95rem, 2.5vw, 1.2rem);
+    line-height: 1.55;
+    margin-bottom: 1rem;
+}
+
+
+.hero-section p, .hero-section h1{
+    color: #ffffff;
+    text-shadow: 0 3px 10px rgba(0,0,0, 0.5);
+}
+
+.content{   /*GENERAL SECTIONS*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin-block: 2rem;
+    margin: 2rem auto;
+    width: 100%;
+    gap: 1rem;
+}
+
+.slide-content{ /*slide shows*/
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+    margin: 2rem auto;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    gap: 1rem;
+}
+
+.slide-content:nth-child(even) .card {
+    flex-direction: row-reverse;
+    border-radius: 1rem
+}
+
+.card{  /*CARDS*/
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    max-width: 1000px;
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+    background: #ECE9E6;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.25);
+}
+
+
+.card-image{
+    width: 60%;
+    flex-shrink: 0; /*prevents resizing*/
+    height: 100%;
+    overflow: hidden;
+}
+.card-image img{
+    width: 100%;
+    height: 100%;
+    display:block;
+    object-fit: cover;
+    transition: opacity 0.6s ease;
+}
+
+.card-text{
+    height: 100%;
+    width: 40%;
+    text-align: center;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+
+.card ul{
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    list-style: none;
+    text-align: center;
+}
+
+
+
+.window{    /*WINDOW + PANEL INFO*/
+    height: 100%;
+    margin: 0;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2 1fr);
+    gap: 1.5rem;
+    background: linear-gradient(to right, #FFFFFF, );
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.2);
+    border-radius: 1em;
+    }
+
+.panel{
+    display: flex;
+    max-width: 95%;
+    height: 200px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+    box-shadow: 0 .1rem 1rem rgba(0, 0, 0, 0.1);
+    border-radius: 1em;
+    padding: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#banking{
+    display: flex;
+    height: auto;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1em;
+    padding: 1rem;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    gap: 1rem;
+}
+
+.panel:hover, .finance-panel:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 0.8rem 1.6rem rgba(0, 0, 0, 0.2);
+}
+
+.panel-icon{
+    transition: transform 0.25s ease;
+    font-size: 2rem;
+    color: #0000FF;
+    margin-bottom: 10px;
+}
+
+.panel:hover .panel-icon, .finance-panel:hover {
+    transform: scale(1.1);
+}
+
+.map-content{   /*MAP SECTION*/
+    text-align: center;
+    width: 75%;
+    padding: 1rem;
+    margin: auto;
+    margin-bottom: 2rem;
+    border-radius: 1em;
+    overflow: hidden;
+    box-shadow: 0 .1rem 1rem rgba(0,0,0,0.1);
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+}
+
+/*FOOTER*/
+footer{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background: linear-gradient(to right, #000080, #0000FF);  
+    width: 100%;
+}
+
+.footer-content{
+    width: 100%;
+    margin: 0;
+    max-width: 500px;
+    border-radius: 1em;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: none; /*blurs everything behind the element*/
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+footer h3{
+    color: #ECE9E6;
+    text-align: center;
+    font-size: 1.25rem;
+    letter-spacing: 0.05rem;
+    margin-bottom: 1.5rem;
+}
+
+footer h3::after{
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #FFD700;
+    margin: .6rem auto 0;
+    border-radius: 2px;
+}
+
+
+.footer-list{
+    list-style: none;
+    padding: 1rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-list li{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1rem;
+    color: #ECE9E6;
+}
+
+.footer-icon{
+    color: #FFD700;
+    font-size: 1.5rem;
+    min-width: 20px;
+}
+
+.footer-list a{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: #ECE9E6;
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.footer-list a:hover {
+    opacity: 0.85;
+    transform: translateY(-2px);
+}
+
+.footer-list a:active{
+    opacity: 0.7;
+}
+
+
+
+
+
+@media (max-width: 768px) {
+    html, body {
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    * {
+        transition: transform 0.2s ease, opacity 0.2s ease;
+    }
+
+    .card:hover,
+    .panel:hover,
+    .btn:hover {
+        transform: none;
+        box-shadow: none;
+    }
+
+
+    /* Header */
+    header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        height: 75px;
+        position: fixed;
+    }
+
+    .logo img {
+        height: 70px;
+    }
+
+    /* Navigation */
+    .menu-toggle{
+        display: block;
+        position: absolute;
+        right: 3rem;
+        top: 1.5rem;
+    }
+
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }/*animates the toggle button*/
+
+
+    .nav-list {
+        position: absolute;
+        top: 75px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        pointer-events: none;
+        background: rgba(255,255,255,0.98);
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        padding: 1rem 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: opacity 0.2s ease, max-height 0.25s ease;    }
+
+    .nav-list.active {
+        max-height: 300px;
+        opacity: 1;
+        pointer-events: auto;
+        padding: 1rem 0;
+    }
+
+
+
+    /* Hero */
+    .hero-section {
+        height: 120vh;
+        padding: 0rem;
+        display: flex;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #partner-title{
+        font-size: 1.5rem;
+    }
+
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .btn {
+        width: 40%;
+    }
+
+    .slide-content{
+        height: auto;
+        padding: 1rem 0;
+    }
+
+    /* Cards */
+    .card {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        max-width: 90%;
+        height: auto;
+        box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.15);
+    }
+
+    .card-text {
+        text-align: center;
+        width: 90%;
+        height: auto;
+        order: 1;
+        padding: 1rem;
+    }
+
+    .card-image{
+        width: 100%;
+        height: 300px;
+        order: 2;
+    }
+
+    .card-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card ul {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .slide-content:nth-child(even) .card {
+        flex-direction: column;
+    }
+
+    /* Core Values */
+    .window {
+        box-shadow: none;
+        grid-template-columns: 1fr;
+        max-width: 90%;
+    }
+
+    .panel {
+        max-width: 100%;
+        height: 200px;
+        box-shadow: 0 0.4rem 0.8rem rgba(0,0,0,0.15);
+    }
+
+    /*finance page stuff*/
+    #finance-hero {
+        width: 100%;
+        max-width: 100%;
+        padding: 1.25rem;
+        box-sizing: border-box;
+        height: auto;
+    }
+
+    #banking {
+        flex-direction: column;
+        height: auto;
+    }
+
+    #finance-content h1 {
+        text-align: center;
+        margin-inline: auto;
+        width: 100%;
+    }
+
+
+
+    /* Map */
+    .map-content{
+        max-width: 90%;
+        box-shadow: 0 .1rem 1rem rgba(0,0,0,0.2);
+    }
+
+    .map-content iframe {
+        height: 300px;
+    }
+
+    /* Footer */
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+        margin: 0;
+        width: 100%;
+    }
+
+    .footer-content {
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+    

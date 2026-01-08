@@ -1,0 +1,157 @@
+body{
+
+}
+
+.navbar-brand img{
+    width: 150px;
+}
+
+#hero{
+    background-image: linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(hero.JPG);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero-text{
+    font-family: "Helvetica";
+    font-size: 36px;
+    color: #fff;
+    padding-left: 4%;
+    padding-top:220px;
+    padding-bottom: 20px;
+    /*text-align: center;*/
+}
+
+#hero-text .btn-primary{
+    background-image: linear-gradient(to right,#000080,#0000FF);
+    border: none;
+    box-shadow: none;
+    font-size: 15px;
+    padding: 15px 30px;
+    margin-top: 10px;
+}
+
+#mission ul{
+    font-size:25px;
+    font-family: Helvetica;
+    text-align: left;
+    color: black;
+}
+
+#mission-img{
+    background-image: url(Leaders.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#mission h1{
+    background: linear-gradient(to right,#000080,#0000FF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+#vision h1{
+background: linear-gradient(to right,#000080,#0000FF);
+-webkit-background-clip: text;
+color: transparent;
+}
+
+#vision p{
+    font-family: Helvetica;
+    color: black;
+}
+
+#vision-img{
+    background-image: url(people1.png);
+    background-position: center;
+    background-size: cover;
+}
+
+#vision ul{
+    font-size:25px;
+    font-family: Helvetica;
+    text-align: left;
+    color: black;
+}
+
+#values h1{
+    font-family: Helvetica;
+    text-align: center;
+}
+/*#values p{
+    font-family: Helvetica;
+    font-size: 25px;
+    text-align: center;
+    color: black;
+}*/
+
+.values{
+    background: linear-gradient(to right,#000080,#0000FF);
+    -webkit-background-clip: text;
+    color: transparent;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+
+
+.value-box{
+    box-shadow: 0 0 4px 0 #000080;
+    padding: 15px;
+    position: relative;
+}
+
+.value-box p{
+    color:black;
+}
+
+
+span{
+    background: linear-gradient(to right,#000080,#0000FF);
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.contact{
+    margin: 20px auto;
+}
+
+.contact p{
+   color: black;
+}
+
+.contact-box{
+    background: linear-gradient(to right,#000080,#0000FF);
+    display: flex;   
+}
+
+.contact-box a{
+    text-decoration: none;
+}
+
+
+.contact-left{
+    flex-basis: 50%;
+    padding: 40px 60px;
+}
+
+.contact-left h3, ul{
+    color: white
+}
+
+.contact-right{
+    flex-basis: 50%;
+    padding: 40px;
+}
+
+.contact-right h3, p{
+    color: white;
+}
+
+
+
+
+
+
+
